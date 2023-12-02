@@ -125,7 +125,9 @@ This has been adapted from the Original repo for GIT. - https://github.com/micro
 The repo shows the key code path of constructing the network
 input with transformations and forward/backward. The code can be plugged into
 any trainer easily. Here is the example for the base model.
-- Pretraining/captioning
+- Train for Image Captioning
+- Run all the cells in trainGIT.ipynb.
+- The trainGIT file has all the steps to run from installing the required files, to downloading the dataset, to training the model and running the evaluation scripts as well.
   ```
   python trainer.py
   ```
