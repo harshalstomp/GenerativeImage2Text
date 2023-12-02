@@ -5,7 +5,7 @@ from pytorch_lightning import Trainer, seed_everything
 from pytorch_lightning.callbacks import LearningRateMonitor, ModelCheckpoint
 from pytorch_lightning.callbacks.early_stopping import EarlyStopping
 
-from generativeimage2text.pl_data import CHPDataModule
+from generativeimage2text.p_data import CHPDataModule
 from generativeimage2text.pl_model import TestImageCaptioningModel 
 import warnings
 import torch
