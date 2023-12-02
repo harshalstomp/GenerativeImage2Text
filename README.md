@@ -11,7 +11,7 @@ This has been adapted from the Original repo for GIT. - https://github.com/micro
 
 - Download the source code by
   ```shell
-  git clone https://github.com/TanmayAmbadkar/GenerativeImage2Text.git
+  git clone https://github.com/harshalstomp/GenerativeImage2Text.git
   cd GenerativeImage2Text
   ```
 
@@ -96,38 +96,16 @@ This has been adapted from the Original repo for GIT. - https://github.com/micro
        If you get lower score (e.g. 126 for the base model),
        the reason could be
        the misalignment of the environment, e.g. pytorch version.
-    3.  (optional) To exactly reproduce the number, please run the following:
-       ```bash
-       nvidia-docker run --ipc=host amsword/setup:py38pt19u20cu11 \
-           bash -c "mkdir -p /tmp/code \
-                   && cd /tmp/code \
-                   && pip install git+https://github.com/microsoft/azfuse.git \
-                   && git clone https://github.com/amsword/generativeimage2text.git \
-                   && cd generativeimage2text \
-                   && pip install -r requirements.txt \
-                   && python setup.py build develop \
-                   && AZFUSE_TSV_USE_FUSE=1 python -m generativeimage2text.inference -p "{'type': 'test_git_inference_single_tsv', \
-                            'image_tsv': 'data/coco_caption/test.img.tsv', \
-                            'model_name': 'GIT_BASE_COCO', \
-                            'question_tsv': null, \
-                            'out_tsv': 'inference/GIT_BASE_COCO/coco.tsv', \
-                      }" \
-                   &&  AZFUSE_TSV_USE_FUSE=1 python -m generativeimage2text.inference -p "{'type': 'evaluate_on_coco_caption', \
-                       'res_file': 'inference/GIT_BASE_COCO/coco.tsv', \
-                       'label_file': 'data/coco_caption/test.caption.tsv', \
-                       'outfile': 'inference/GIT_BASE_COCO/coco.score.json', \
-                       }" \
-                   && cat inference/GIT_BASE_COCO/coco.score.json \
-                   "
-       ``` --->
   
-# Training
+# Steps to Train the model
 The repo shows the key code path of constructing the network
 input with transformations and forward/backward. The code can be plugged into
 any trainer easily. Here is the example for the base model.
 - Train for Image Captioning
 - Run all the cells in trainGIT.ipynb.
 - The trainGIT file has all the steps to run from installing the required files, to downloading the dataset, to training the model and running the evaluation scripts as well.
+- Download the dataset, extract them in the dataset directory, and change the paths in the configs.
+- Run the inference after training the model and then run the evaluation code to get the scores of the model.
   ```
   python trainer.py
   ```
