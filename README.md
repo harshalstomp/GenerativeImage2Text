@@ -1,5 +1,5 @@
 # Introduction
-This repo presents some example codes to reproduce some results in
+This repo is the modified version of the original repo to make the model trainable based on my requirements.
 [GIT: A Generative Image-to-text Transformer for Vision and Language](https://arxiv.org/abs/2205.14100).
 
 This has been adapted from the Original repo for GIT. - https://github.com/microsoft/GenerativeImage2Text
@@ -96,7 +96,7 @@ This has been adapted from the Original repo for GIT. - https://github.com/micro
        If you get lower score (e.g. 126 for the base model),
        the reason could be
        the misalignment of the environment, e.g. pytorch version.
-    3. (optional) To exactly reproduce the number, please run the following:
+    3.  <!--- (optional) To exactly reproduce the number, please run the following:
        ```bash
        nvidia-docker run --ipc=host amsword/setup:py38pt19u20cu11 \
            bash -c "mkdir -p /tmp/code \
@@ -119,7 +119,7 @@ This has been adapted from the Original repo for GIT. - https://github.com/micro
                        }" \
                    && cat inference/GIT_BASE_COCO/coco.score.json \
                    "
-       ```
+       ``` --->
   
 # Training
 The repo shows the key code path of constructing the network
