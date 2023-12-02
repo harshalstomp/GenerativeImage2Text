@@ -106,8 +106,9 @@ any trainer easily. Here is the example for the base model.
 - The trainGIT file has all the steps to run from installing the required files, to downloading the dataset, to training the model and running the evaluation scripts as well.
 - Download the dataset, extract them in the dataset directory, and change the paths in the configs.
 - Run the inference after training the model and then run the evaluation code to get the scores of the model.
+- 
   ```
-  python trainer.py
+  python lightning_trainer.py
   ```
 
 # Citation
